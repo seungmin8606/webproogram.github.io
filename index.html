@@ -2,204 +2,201 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <title>웹 페이지 구현 과제</title>
-    <style>
-        /* #menubar {
-            background: red;
-        }
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <title>웹 페이지 구현 과제</title>
+  <style>
+    .tab_menu {
+      position: relative;
+    }
 
-        #menubar ul {
-            margin: 0;
-            padding: 0;
-            width: 567px;
-        }
+    .tab_menu .list {
+      overflow: hidden;
+      padding: 0%;
+    }
 
-        #menubar ul li {
-            display: inline-block;
-            list-style-type: none;
-            padding: 0px 15px;
-        }
+    .tab_menu .list li {
+      display: inline-block;
+      list-style-type: none;
+      margin-right: 14px;
+    }
 
-        #menubar ul li a {
-            color: white;
-            text-decoration: none;
-        }
+    .tab_menu .list .tab-btn {
+      cursor: pointer;
+      font-size: 13px;
+    }
 
-        #menubar ul li a:hover {
-            color: violet;
-        } */
+    .cont.current {
+      display: block;
+      position: absolute;
+      margin-top: 20px;
+      left: 0;
+    }
 
+    .cont {
+      display: none;
+    }
 
+    .tab_menu .list li .tab-btn.current {
+      font-weight: bold;
+      color: green;
+    }
 
-        .tab_menu {
-            position: relative;
-            display: block;
-        }
+    strong {
+      font-style: italic;
+      font-size: larger;
+    }
 
-        .tab_menu .list {
-            background: yellow;
-            overflow: hidden;
-            padding: 0%;
-        }
-
-        .tab_menu .list li {
-            display: inline-block;
-            list-style-type: none;
-            margin-right: 14px;
-        }
-
-        .tab_menu .list .tab-btn {
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .cont.current {
-            display: block;
-            position: absolute;
-            margin-top: 20px;
-            left: 0;
-            color: black;
-        }
-
-        .cont {
-            display: none;
-        }
-
-        .tab_menu .list li .tab-btn.current {
-            font-weight: bold;
-            color: green;
-        }
-
-        strong {
-            font-style: italic;
-            font-size: larger;
-        }
-
-        .add {
-            background: grey;
-            margin-top: 150px;
-        }
-    </style>
+    .add {
+      margin-top: 150px;
+    }
+  </style>
 </head>
 
 <body>
-    <h3>코로나 변이 바이러스</h3>
-    <hr>
-    <img src="images/virus.png" width="150" height="200">
-    <div class="tab_menu">
-        <ul class="list">
-            <li>
-                <a class="tab-btn current" data-tab="tab1">알파 변이</a>
-            </li>
-            <li>
-                <a class="tab-btn" data-tab="tab2">베타 변이</a>
-            </li>
-            <li>
-                <a class="tab-btn" data-tab="tab3">감마 변이</a>
-            </li>
-            <li>
-                <a class="tab-btn" data-tab="tab4">델타 변이</a>
-            </li>
-            <li>
-                <a class="tab-btn" data-tab="tab5">엡실론 변이</a>
-            </li>
-        </ul>
-
-    </div>
-    <div class="container">
+  <h3>코로나 변이 바이러스</h3>
+  <hr>
+  <img src="images/virus.png" width="150" height="200">
+  <div class="tab_menu">
+    <ul class="list">
+      <li>
+        <a class="tab-btn current" data-tab="tab1">알파 변이</a>
         <div id="tab1" class='cont current'>
-            <strong>알파 변이</strong><br>
-            첫 발견 날짜 : 2020. 12. 01<br>
-            첫 발견 국가 : 영국<br>
-            관련 주소 :
-            <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCyoNMwzSsk1YPTifTO1521Pj8LrzQ1v5m4BAKh0DVA&q=%EC%95%8C%ED%8C%8C+%EB%B3%80%EC%9D%B4&oq=%EC%95%8C%ED%8C%8C+%EB%B3%80%EC%9D%B4&aqs=chrome.1.69i57j46i512j0i512j0i8i30j0i5i30j0i8i30.9170j0j7&sourceid=chrome&ie=UTF-8"
-                target="_blank">
-                구글검색창</a>,
-            <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EC%95%8C%ED%8C%8C_%EB%B3%80%EC%9D%B4" target="_blank">
-                위키백과</a>,
-            <a href="https://namu.wiki/w/SARS-CoV-2/%EC%95%8C%ED%8C%8C%20%EB%B3%80%EC%9D%B4" target="_blank">
-                나무위키</a>
+          <strong>알파 변이</strong><br>
+          첫 발견 날짜 : 2020. 12. 01<br>
+          첫 발견 국가 : 영국<br>
+          관련 주소 :
+          <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCyoNMwzSsk1YPTifTO1521Pj8LrzQ1v5m4BAKh0DVA&q=%EC%95%8C%ED%8C%8C+%EB%B3%80%EC%9D%B4&oq=%EC%95%8C%ED%8C%8C+%EB%B3%80%EC%9D%B4&aqs=chrome.1.69i57j46i512j0i512j0i8i30j0i5i30j0i8i30.9170j0j7&sourceid=chrome&ie=UTF-8"
+            target="_blank">
+            구글검색창</a>,
+          <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EC%95%8C%ED%8C%8C_%EB%B3%80%EC%9D%B4" target="_blank">
+            위키백과</a>,
+          <a href="https://namu.wiki/w/SARS-CoV-2/%EC%95%8C%ED%8C%8C%20%EB%B3%80%EC%9D%B4" target="_blank">
+            나무위키</a>
         </div>
+      </li>
+      <li>
+        <a class="tab-btn" data-tab="tab2">베타 변이</a>
         <div id="tab2" class='cont'>
-            <strong>베타 변이</strong><br>
-            첫 발견 날짜 : 2020. 12. 20<br>
-            첫 발견 국가 : 남아프리카공화국<br>
-            관련 주소 :
-            <a href="https://www.google.com/search?q=%EB%B2%A0%ED%83%80+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvIquiabbrNeijzuz7Ag-ehi1dLydw%3A1639059982578&ei=DhKyYcfnIaqymAWi8qvoBg&gs_ssp=eJzj4tVP1zc0zDNIzqmstMwxYPTifb1pwdvmBoXXmxvezN0CAKnrDXM&oq=%EB%B2%A0%ED%83%80+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAEYATIHCCMQsAMQJzIICC4QgAQQsAMyBwgAELADEB4yCQgAELADEAcQHjIJCAAQsAMQCBAeMgkIABCwAxAIEB5KBAhBGAFKBAhGGABQAFgAYK8XaABwAHgAgAGsAYgBrAGSAQMwLjGYAQDIAQbAAQE&sclient=gws-wiz"
-                target="_blank">
-                구글검색창</a>,
-            <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EB%B2%A0%ED%83%80_%EB%B3%80%EC%9D%B4" target="_blank">
-                위키백과</a>,
-            <a href="https://namu.wiki/w/SARS-CoV-2/%EB%B2%A0%ED%83%80%20%EB%B3%80%EC%9D%B4" target="_blank">
-                나무위키</a>
+          <strong>베타 변이</strong><br>
+          첫 발견 날짜 : 2020. 12. 20<br>
+          첫 발견 국가 : 남아프리카공화국<br>
+          관련 주소 :
+          <a href="https://www.google.com/search?q=%EB%B2%A0%ED%83%80+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvIquiabbrNeijzuz7Ag-ehi1dLydw%3A1639059982578&ei=DhKyYcfnIaqymAWi8qvoBg&gs_ssp=eJzj4tVP1zc0zDNIzqmstMwxYPTifb1pwdvmBoXXmxvezN0CAKnrDXM&oq=%EB%B2%A0%ED%83%80+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAEYATIHCCMQsAMQJzIICC4QgAQQsAMyBwgAELADEB4yCQgAELADEAcQHjIJCAAQsAMQCBAeMgkIABCwAxAIEB5KBAhBGAFKBAhGGABQAFgAYK8XaABwAHgAgAGsAYgBrAGSAQMwLjGYAQDIAQbAAQE&sclient=gws-wiz"
+            target="_blank">
+            구글검색창</a>,
+          <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EB%B2%A0%ED%83%80_%EB%B3%80%EC%9D%B4" target="_blank">
+            위키백과</a>,
+          <a href="https://namu.wiki/w/SARS-CoV-2/%EB%B2%A0%ED%83%80%20%EB%B3%80%EC%9D%B4" target="_blank">
+            나무위키</a>
         </div>
+      </li>
+      <li>
+        <a class="tab-btn" data-tab="tab3">감마 변이</a>
         <div id="tab3" class='cont'>
-            <strong>감마 변이</strong><br>
-            첫 발견 날짜 : 2020. 12. 24<br>
-            첫 발견 국가 : 브라질<br>
-            관련 주소 :
-            <a href="https://www.google.com/search?q=%EA%B0%90%EB%A7%88+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvJEEgE7huZmmmo0B1Lip7-axkWl0Q%3A1639060253574&ei=HROyYcn5Ic_n-Qa_p7vQAQ&gs_ssp=eJzj4tVP1zc0zCkqMC8yqjA0YPTifbVhwuvlHQqvNze8mbsFAKeJDVg&oq=%EA%B0%90%EB%A7%88+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAEYATIHCCMQsAMQJzINCC4QgAQQhwIQsAMQFDIHCAAQsAMQHjIHCAAQsAMQHjIJCAAQsAMQBxAeMgkIABCwAxAIEB4yCQgAELADEAcQHjIJCAAQsAMQCBAeSgQIQRgBSgQIRhgAUABYAGDPCmgAcAB4AIAByQKIAckCkgEDMy0xmAEAyAEIwAEB&sclient=gws-wiz"
-                target="_blank">
-                구글검색창</a>,
-            <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EA%B0%90%EB%A7%88_%EB%B3%80%EC%9D%B4" target="_blank">
-                위키백과</a>,
-            <a href="https://namu.wiki/w/SARS-CoV-2/%EA%B0%90%EB%A7%88%20%EB%B3%80%EC%9D%B4" target="_blank">
-                나무위키</a>
+          <strong>감마 변이</strong><br>
+          첫 발견 날짜 : 2020. 12. 24<br>
+          첫 발견 국가 : 브라질<br>
+          관련 주소 :
+          <a href="https://www.google.com/search?q=%EA%B0%90%EB%A7%88+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvJEEgE7huZmmmo0B1Lip7-axkWl0Q%3A1639060253574&ei=HROyYcn5Ic_n-Qa_p7vQAQ&gs_ssp=eJzj4tVP1zc0zCkqMC8yqjA0YPTifbVhwuvlHQqvNze8mbsFAKeJDVg&oq=%EA%B0%90%EB%A7%88+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAEYATIHCCMQsAMQJzINCC4QgAQQhwIQsAMQFDIHCAAQsAMQHjIHCAAQsAMQHjIJCAAQsAMQBxAeMgkIABCwAxAIEB4yCQgAELADEAcQHjIJCAAQsAMQCBAeSgQIQRgBSgQIRhgAUABYAGDPCmgAcAB4AIAByQKIAckCkgEDMy0xmAEAyAEIwAEB&sclient=gws-wiz"
+            target="_blank">
+            구글검색창</a>,
+          <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EA%B0%90%EB%A7%88_%EB%B3%80%EC%9D%B4" target="_blank">
+            위키백과</a>,
+          <a href="https://namu.wiki/w/SARS-CoV-2/%EA%B0%90%EB%A7%88%20%EB%B3%80%EC%9D%B4" target="_blank">
+            나무위키</a>
         </div>
+      </li>
+      <li>
+        <a class="tab-btn" data-tab="tab4">델타 변이</a>
         <div id="tab4" class='cont'>
-            <strong>델타 변이</strong><br>
-            첫 발견 날짜 : 2021. 03. 24<br>
-            첫 발견 국가 : 인도<br>
-            관련 주소 :
-            <a href="https://www.google.com/search?q=%EB%8D%B8%ED%83%80+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvLHZesB-Q6anacgRXcsjzqtvY1iug%3A1639060256305&ei=IBOyYdC5EfGA1e8PztezmAo&oq=%EB%8D%B8%ED%83%80+&gs_lcp=Cgdnd3Mtd2l6EAEYATIECAAQQzIKCAAQgAQQhwIQFDIKCAAQgAQQhwIQFDIECAAQQzILCAAQgAQQsQMQgwEyBAgAEEMyBQgAEIAEMgUILhCABDIFCAAQgAQyBQgAEIAEOgcILhCwAxAnOgcIABCwAxAeOgkIABCwAxAHEB46CQgAELADEAgQHjoECCMQJzoRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOggILhCABBCxAzoOCC4QgAQQsQMQxwEQ0QM6DgguEIAEELEDEMcBEKMCSgQIQRgBSgQIRhgAUO0IWJQWYKkdaARwAHgBgAGhAYgB5AaSAQMwLjaYAQCgAQHIAQfAAQE&sclient=gws-wiz"
-                target="_blank">
-                구글검색창</a>,
-            <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EB%8D%B8%ED%83%80_%EB%B3%80%EC%9D%B4" target="_blank">
-                위키백과</a>,
-            <a href="https://namu.wiki/w/SARS-CoV-2/%EB%8D%B8%ED%83%80%20%EB%B3%80%EC%9D%B4" target="_blank">
-                나무위키</a>
+          <strong>델타 변이</strong><br>
+          첫 발견 날짜 : 2021. 03. 24<br>
+          첫 발견 국가 : 인도<br>
+          관련 주소 :
+          <a href="https://www.google.com/search?q=%EB%8D%B8%ED%83%80+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvLHZesB-Q6anacgRXcsjzqtvY1iug%3A1639060256305&ei=IBOyYdC5EfGA1e8PztezmAo&oq=%EB%8D%B8%ED%83%80+&gs_lcp=Cgdnd3Mtd2l6EAEYATIECAAQQzIKCAAQgAQQhwIQFDIKCAAQgAQQhwIQFDIECAAQQzILCAAQgAQQsQMQgwEyBAgAEEMyBQgAEIAEMgUILhCABDIFCAAQgAQyBQgAEIAEOgcILhCwAxAnOgcIABCwAxAeOgkIABCwAxAHEB46CQgAELADEAgQHjoECCMQJzoRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOggILhCABBCxAzoOCC4QgAQQsQMQxwEQ0QM6DgguEIAEELEDEMcBEKMCSgQIQRgBSgQIRhgAUO0IWJQWYKkdaARwAHgBgAGhAYgB5AaSAQMwLjaYAQCgAQHIAQfAAQE&sclient=gws-wiz"
+            target="_blank">
+            구글검색창</a>,
+          <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EB%8D%B8%ED%83%80_%EB%B3%80%EC%9D%B4" target="_blank">
+            위키백과</a>,
+          <a href="https://namu.wiki/w/SARS-CoV-2/%EB%8D%B8%ED%83%80%20%EB%B3%80%EC%9D%B4" target="_blank">
+            나무위키</a>
         </div>
+      </li>
+      <li>
+        <a class="tab-btn" data-tab="tab5">엡실론 변이</a>
         <div id="tab5" class='cont'>
-            <strong>엡실론 변이</strong><br>
-            첫 발견 날짜 : 2021. 01. 19<br>
-            첫 발견 국가 : 미국<br>
-            관련 주소 :
-            <a href="https://www.google.com/search?q=%EC%97%A1%EC%8B%A4%EB%A1%A0+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvIAyXHtatUAOWTCt38CU-W-OClCzA%3A1639060399130&ei=rxOyYavrBoLM-QaghZe4DQ&ved=0ahUKEwjr_urm99b0AhUCZt4KHaDCBdcQ4dUDCA4&uact=5&oq=%EC%97%A1%EC%8B%A4%EB%A1%A0+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAM6BwgjELADECc6CAgAEIAEELADOg0IABCABBCHAhCwAxAUOgkIABCwAxAHEB46BAgjECc6CAgAEIAEELEDOhEILhCABBCxAxCDARDHARDRAzoLCAAQgAQQsQMQgwE6DgguEIAEELEDEMcBENEDOggILhCABBCxAzoFCAAQgAQ6CwguEIAEEMcBEK8BOgUILhCABDoKCAAQgAQQhwIQFDoECAAQQzoECAAQCkoECEEYAUoECEYYAFCyFFi5I2DTJWgCcAB4AYABhQKIAa4RkgEGMC4xMy4ymAEAoAEByAEKwAEB&sclient=gws-wiz"
-                target="_blank">
-                구글검색창</a>,
-            <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EC%97%A1%EC%8B%A4%EB%A1%A0_%EB%B3%80%EC%9D%B4"
-                target="_blank">
-                위키백과</a>,
-            <a href="https://namu.wiki/w/SARS-CoV-2/%EC%97%A1%EC%8B%A4%EB%A1%A0%20%EB%B3%80%EC%9D%B4" target="_blank">
-                나무위키</a>
+          <strong>엡실론 변이</strong><br>
+          첫 발견 날짜 : 2021. 01. 19<br>
+          첫 발견 국가 : 미국<br>
+          관련 주소 :
+          <a href="https://www.google.com/search?q=%EC%97%A1%EC%8B%A4%EB%A1%A0+%EB%B3%80%EC%9D%B4&sxsrf=AOaemvIAyXHtatUAOWTCt38CU-W-OClCzA%3A1639060399130&ei=rxOyYavrBoLM-QaghZe4DQ&ved=0ahUKEwjr_urm99b0AhUCZt4KHaDCBdcQ4dUDCA4&uact=5&oq=%EC%97%A1%EC%8B%A4%EB%A1%A0+%EB%B3%80%EC%9D%B4&gs_lcp=Cgdnd3Mtd2l6EAM6BwgjELADECc6CAgAEIAEELADOg0IABCABBCHAhCwAxAUOgkIABCwAxAHEB46BAgjECc6CAgAEIAEELEDOhEILhCABBCxAxCDARDHARDRAzoLCAAQgAQQsQMQgwE6DgguEIAEELEDEMcBENEDOggILhCABBCxAzoFCAAQgAQ6CwguEIAEEMcBEK8BOgUILhCABDoKCAAQgAQQhwIQFDoECAAQQzoECAAQCkoECEEYAUoECEYYAFCyFFi5I2DTJWgCcAB4AYABhQKIAa4RkgEGMC4xMy4ymAEAoAEByAEKwAEB&sclient=gws-wiz"
+            target="_blank">
+            구글검색창</a>,
+          <a href="https://ko.wikipedia.org/wiki/SARS-CoV-2_%EC%97%A1%EC%8B%A4%EB%A1%A0_%EB%B3%80%EC%9D%B4"
+            target="_blank">
+            위키백과</a>,
+          <a href="https://namu.wiki/w/SARS-CoV-2/%EC%97%A1%EC%8B%A4%EB%A1%A0%20%EB%B3%80%EC%9D%B4" target="_blank">
+            나무위키</a>
         </div>
-    </div>
+      </li>
+    </ul>
 
     <div class="add" onload="ShowAll()">
-        추가 변이 : <input id="k" type="text" /> 첫 발견 날짜 / 국가 : <input id="v" type="text" />
-        <button onclick="Save()">저장</button>
-        <button onclick="Remove()">삭제</button>
-        <hr />
+      추가 변이 : <input id="k" type="text" /> 첫 발견 날짜 / 국가 : <input id="v" type="text" />
+      <button onclick="Save()">저장</button>
+      <button onclick="Remove()">삭제</button>
+      <hr />
 
-        <select id="entries" size="10" onchange="onEntrySelected()"></select>
-        <button onclick="ShowAll()">다시 표시</button>
+      <select id="entries" size="10" onchange="onEntrySelected()"></select>
+      <button onclick="ShowAll()">표시</button>
     </div>
+  </div>
 
 
+  <script>
+    $('.tab-btn').click(function () {
+      var tab_id = $(this).attr('data-tab');
 
-    <script>
-        $('.tab-btn').click(function () {
-            var tab_id = $(this).attr('data-tab');
+      $('.tab-btn').removeClass('current');
+      $('.cont').removeClass('current');
 
-            $('.tab-btn').removeClass('current');
-            $('.cont').removeClass('current');
+      $(this).addClass('current');
+      $("#" + tab_id).addClass('current');
+    });
 
-            $(this).addClass('current');
-            $("#" + tab_id).addClass('current');
-        });
-    </script>
+    var key = document.getElementById("k");
+    var value = document.getElementById("v");
+    var entries = document.getElementById("entries");
+
+    function ShowAll() {
+      entries.innerHTML = "";
+
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+
+        entries.options[entries.options.length] = new Option(
+          k + " : " + localStorage[k], k
+        );
+      }
+    }
+
+    function Save() {
+      localStorage[key.value] = value.value;
+      ShowAll();
+    }
+
+    function Remove() {
+      delete localStorage[key.value];
+      ShowAll();
+    }
+
+    function onEntrySelected() {
+      var selectedOption = entries.options[entries.selectedIndex];
+      key.value = selectedOption.value;
+      value.value = localStorage[selectedOption.value];
+    }
+  </script>
 </body>
 
 </html>
